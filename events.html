@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/i.css">
+    <link rel="icon" href="img/cake-png-26272.png">
+    <title>Midnight Snack</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <div class="header himage"><a href="index.html"><img src="img/cake-png-26272.png" alt="header cake"></a>
+                </div>
+                <div class="header htitle">
+                    <h1>Midnight Snack</h1>
+                </div>
+                <div class="header hbutton">
+                    <a href="" id="shop-page" target="_self">
+                        <div class="shop-icon">
+                            <div class="shop-cart-amount">1</div>
+                        </div>
+                    </a>
+                    <button id="openLogin" type="button">Log in</button>
+                    <dialog closedby="any" class="dialog-login">
+                        <div class="login-window">
+                            <div class="header-login">
+                                <div class="title-login">
+                                    <h3>Log in to Midnight Snack</h3>
+                                </div>
+                                <div class="login-close-button"><button formtarget="dialog">
+                                        <div class="x"></div>
+                                    </button></div>
+                            </div>
+                            <div class="login">
+                                <form action="" method="get" class="login">
+
+                                    <label for="name" id="name">Username</label>
+                                    <input type="text" name="name" id="name" />
+
+                                    <label for="password" id="email">Password</label>
+                                    <input type="password" name="password" id="password" value="" />
+                                    <a href="">Trouble logging in?</a>
+                                    <div><button type="submit" class="login-button">Log in</button></div>
+                                    <a href="">Don't have an account? Sing up</a>
+                                </form>
+                            </div>
+
+                    </dialog>
+                </div>
+
+            </div>
+        </header>
+        <nav>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html"><span>Main</span></a></li>
+                    <li>
+                        <div class="nav-events">Events
+                            <div class="nav-events-dropdown">
+                                <a href="events.html">Spring</a>
+                                <a href="">Summer</a>
+                                <a href="">Autumn</a>
+                                <a href="">Winter</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Contacts</a></li>
+                    <li><a href="">Shop</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main">
+
+
+            <section class="season-summer">
+                <div class="season-header">
+                    <h2 class="season-title">Summer</h2>
+                    <div class="season-menu">
+                        <button id="open-modalSum01" class="open-button">Special Menu</button>
+                        <dialog id="SM01" class="dialog-popup">
+                            <h2>Valentine's Day Menu</h2>
+                            <h3>Breakfast</h3>
+                            <p>Pancakes of the Heart... 4$</p>
+                            <p></p>
+                            <button id="close-modalSum01" class="close-button">Close</button>
+                        </dialog>
+                    </div>
+                </div>
+                <div class="season">
+
+                    <div class="sevent">
+
+                        <div class="sevent-box">
+                            <h3 class="se-name">Valentines's Day</h3>
+                            <p class="se-date">Febuary 14th - 15th</p>
+                            <p class="se-dsn">Bring your love one to recieve a special offer</p>
+                            <!-- e-dsn  = event description-->
+                        </div>
+
+                        <div class="sevent-box">
+                            <h3 class="se-name">Potato's Day</h3>
+                            <p class="se-date">Febuary 14th - 15th</p>
+                            <p class="se-dsn">Bring your love one to recieve a special offer</p>
+                            <!-- e-dsn  = event description-->
+                        </div>
+
+                        <div class="sevent-box">
+                            <h3 class="se-name">Potato's Day</h3>
+                            <p class="se-date">Febuary 14th - 15th</p>
+                            <p class="se-dsn">Bring your love one to recieve a special offer</p>
+                            <!-- e-dsn  = event description-->
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </section>
+
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="socials">
+                    <a href="https://x.com/" alt="x.com" target="_blank">X</a><br>
+                    <a href="https://facebook.com/" alt="facebook.com">Facebook</a><br>
+                    <a href="https://google.com/" alt="google.com">Google</a><br>
+                    <a href="https://patreon.com/" alt="patreon">Patreon</a>
+                </div>
+                <div class="socials">
+                    <a href="https://www.youtube.com/" alt="youtube.com">Youtube</a><br>
+                    <a href="" alt=""></a><br>
+                    <a href="" alt=""></a><br>
+                    <a href="" alt=""></a><br>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
