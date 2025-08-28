@@ -1,208 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Colors */
+:root {
+    --PRIMARYBGCOLOR: #FA4EAB;
+    --SECONDARYBGCOLOR: #FE83C6;
+    --HEADERFOOTERCOLOR: #323232;
+    --BODYBGCOLOR: black;
+    --COLOR: white;
+    --ACOLOR: #fce8f3;
+
+}
+
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
 
-html {
-    font-size: clamp(1rem, 2vh);
-}
-
 body {
-    background-color: pink;
-    color: black;
-    width: 100%;
-    font-family: 'Times New Roman', Times, serif;
-    display: block;
-    box-sizing: border-box;
-}
-
-
-.wrapper {
-    min-width: 700px;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-    padding: 0;
+    background-color: var(--BODYBGCOLOR);
+    color: var(--COLOR);
+    font-family: "Poppins", sans-serif;
     height: 100vh;
 
 }
 
+button,
+input, a{
+    font: inherit;
+
+}
+
+.container {
+    width: 100%;
+    background-color: var(--PRIMARYBGCOLOR);
+    position: relative;
+}
+header {
+    background-color: var(--HEADERFOOTERCOLOR);
+    height: 8rem;
+}
 .header {
+    background-color: var(--HEADERFOOTERCOLOR);
     display: flex;
     flex-direction: row;
-    border: 1px black;
     width: 100%;
-    height: 3rem;
-
-    background-color: aquamarine;
-
-    overflow: hidden;
-   
+    height: 5rem;
+    justify-content: space-between;
     align-items: center;
 }
 
-.header.himage {
-    justify-content: flex-start;
-    align-items: center;
-    width: 10rem;
-}
-.header.himage a {
-    padding-left: 10%;
-    padding-top: 0.25rem;
-    align-items: flex-start;
-}
 
-.header img {
-    width: 2rem;
-    height: 2rem;
-}
-
-.header.htitle {
-    justify-content: center;
-    letter-spacing: -2px;
-    text-align: center;
-    padding-top: 4px;
-    align-items: center;
-    
-}
-.shop-icon {
-    background-image: url(/img/cart.png);
-    width: 1.5rem;
-    height: 1.5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-right: 10px;
-
-    position: relative;
+.header-bar {
+    flex:1;
+    height: 3.5rem;
     display: flex;
-    z-index: 8;
-}
-
-.shop-cart-amount{
-    width: 0.6rem;
-    height: 0.6rem;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 9;
-    right: 0;
-    text-align: center;
-    font-size: 0.5rem;
-    font-weight: 800;
-}
-.header.hbutton {
-    justify-content:flex-end;
     align-items: center;
-    width: 10rem;
-    padding-right: 2.5%;
 
 }
 
-.header.hbutton>button {
-    width: 2.5rem;
-    height: 1.5rem;
-    border-radius: 40%;
+.header-img {
+    display: flex;
+    align-items: center;
 }
+.header-img img {
+    margin-left: 1rem;
+    width: 3.5em;
+    height: 3.5em;
+}
+#header-middle {
+    justify-content: center;
+    text-align: center;
+}
+.header-title {
+    font-size: 2.25rem;
+}
+#header-end {
+    justify-content: flex-end;
+}
+
+
+
 
 /* ------------------------------ */
 
 .navbar {
-    margin: 8px 0 8px 0;
+    height: 3rem;
     line-height: 1.35rem;
     font-size: 1.3rem;
-}
-
-.navbar ul {
     display: flex;
-    list-style: none;
-    justify-content: space-around;
-
-    border: #333 1px solid;
-    height: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
 }
 
-.navbar li {
-    display: inline-flex;
+.navbar-links{
+    width: 8rem;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) ;
+}
+.navbar-links a {
+    width: 100%;
+    display: block;
     text-align: center;
-    width: 20%;
-    height: 100%;
-    border: #333 1px solid;
-}
-
-.navbar li a {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.navbar li a,
-li a:visited {
     text-decoration: none;
-    color: #333
+    color: var(--COLOR);
 }
 
-.navbar li a:hover,
-li a:focus {
-    background: #333;
-    color: whitesmoke;
-    cursor: pointer;
+.navbar-links:hover {
+    transform: scale(1.1) ;
 }
-.nav-events {
-    border: none;
-    width: 100%;
-    font-size: inherit;
-    font-family: inherit;
-}   
-
-.nav-events:hover {
-    background-color: hsl(0, 0%, 20%);
-    color: whitesmoke;
-    cursor: pointer;
-}
-
-.nav-events a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin: 8px 0 8px 0;
-   
-}
-.nav-events-dropdown {
-    width: 20%;
-    margin-top: 4px;
-    padding: 0;
-}
-.nav-events .nav-events-dropdown{
-    display: none;
-    position: absolute;
-    background-color: hsl(0, 0%, 40%);
-}
-
-.nav-events:hover .nav-events-dropdown{
-    display: block;
-}
-
-.mainpage {
-    height: 75vh;
-    width: 100%;
-}
-.season-summer {
-    height: 75vh;
-}
-.season-header {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid red;
-}
-
-.season-title {
-    margin-left: 45%;
-}
-
-/* -------------Grid + Grid----------------- */
-
-
 /* ----------Grid + Subgrid--------- */
 .season-summmer {
     width: 100%;
@@ -284,10 +206,11 @@ li a:focus {
 .login-close-button {
     width: 2rem;
     align-content: end;
-    
-    
-    
+
+
+
 }
+
 .x {
     margin: auto;
     width: 20px;
@@ -295,19 +218,21 @@ li a:focus {
     background-color: whitesmoke;
     clip-path: path("M8.5 10 4 5.5 5.5 4 10 8.5 14.5 4 16 5.5 11.5 10l4.5 4.5-1.5 1.5-4.5-4.5L5.5 16 4 14.5 8.5 10z");
 }
-    
+
 .login-close-button>button {
     width: 30px;
     height: 30px;
     align-content: center;
-    border: none ;
+    border: none;
     background-color: transparent;
 }
+
 .login-close-button>button:hover {
     border: none;
     border-radius: 50%;
     background-color: rgb(43, 43, 43);
 }
+
 .dialog-login {
     margin: auto;
     width: 17rem;
@@ -388,37 +313,4 @@ li a:focus {
     .dialog-popup[open]::backdrop {
         background-color: rgba(0, 0, 0, 0.0);
     }
-}
-
-/* ------------------------------ */
-.footer {
-    background-color: black;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 5.5em;
-    font-size: 0.85rem;
-
-
-}
-
-.socials {
-    display: inline-block;
-    width: 5em;
-    background-color: black;
-    border: 2px solid black;
-    margin: 0.25rem 1rem 0.25rem 1rem;
-    text-align: center;
-
-
-}
-
-.socials a {
-    text-decoration: none;
-    color: hsl(0, 0%, 50%);
-}
-
-.socials a:hover {
-    text-decoration: none;
-    color: hsl(0, 0%, 80%);
 }
