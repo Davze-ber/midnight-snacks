@@ -32,7 +32,12 @@ body {
     color: var(--COLOR);
     font-family: "Poppins", sans-serif;
     height: 100vh;
+}
 
+img {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 button,
@@ -43,8 +48,10 @@ input, a{
 
 .container {
     width: 100%;
+    height: auto;
     background-color: var(--PRIMARYBGCOLOR);
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 header {
     background-color: var(--HEADERFOOTERCOLOR);
@@ -56,13 +63,12 @@ header {
     flex-direction: row;
     width: 100%;
     height: 5rem;
-    justify-content: space-between;
+ justify-content: space-between;
     align-items: center;
 }
 
 
 .header-bar {
-    flex:1;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -78,15 +84,21 @@ header {
     width: 3.5em;
     height: 3.5em;
 }
+#header-start {
+    flex: 1;
+}
 #header-middle {
     justify-content: center;
     text-align: center;
+    flex: 2;
 }
 .header-title {
-    font-size: 2.25rem;
+    font-size: 2.3rem;
+    text-shadow: 5px 5px 5px black;
 }
 #header-end {
     justify-content: flex-end;
+    flex: 1;
 }
 
 
@@ -124,6 +136,32 @@ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) ;
 
 .navbar-links:hover {
     transform: scale(1.1) ;
+}
+
+.hero {
+    width: 50%;
+    height: 25%;
+    margin: 0 auto;
+}
+
+.attantion {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0;
+    padding: 12px;
+}
+article {
+    border: 1px solid black;
+    box-shadow: 5px 5px 15px 5px black;
+    border-radius: 1rem;
+    border-right-color: var(--SECONDARYBGCOLOR);
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--HEADERFOOTERCOLOR);
 }
 /* ----------Grid + Subgrid--------- */
 .season-summmer {
