@@ -5,36 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/i.css">
     <link rel="icon" href="img/cake-png-26272.png">
     <title>Midnight Snack</title>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container">
         <header>
             <div class="header">
-                <div class="header himage"><a href="index.html"><img src="img/cake-png-26272.png" alt="header cake"></a>
+                <div id="header-start" class="header-bar">
+                    <div class="header-img"><img src="img/cake-png-26272.png" alt="header cake">
+                    </div>
                 </div>
-                <div class="header htitle">
-                    <h1>Midnight Snack</h1>
+                <div id="header-middle" class="header-bar">
+                    <h1 class="header-title">Midnight Snack</h1>
                 </div>
-                <div class="header hbutton">
-                    <a href="" id="shop-page" target="_self"><div class="shop-icon"><div class="shop-cart-amount">1</div></div></a>
+                <div id="header-end" class="header-bar">
+                    <a href="" id="shop-page" target="_self">
+                        <div class="shop-icon">
+                            <div class="shop-cart-amount">1</div>
+                        </div>
+                    </a>
                     <button id="openLogin" type="button">Log in</button>
                     <dialog closedby="any" class="dialog-login">
                         <form action="" method="get" class="login">
                             <div class="login">
                                 <h3>Log in to Midnight Snack</h3>
-                           
+
                                 <label for="name" id="name">Username</label>
                                 <input type="text" name="name" id="name" />
 
                                 <label for="password" id="email">Password</label>
-                                <input type="password" name="password" id="password" value=""/>
+                                <input type="password" name="password" id="password" value="" />
                                 <a href="">Trouble logging in?</a>
                                 <button type="submit">Log in</button>
-                    
+
                                 <a href="">Don't have an account? Sing up</a>
                             </div>
                         </form>
@@ -42,28 +47,27 @@
                     </dialog>
                 </div>
             </div>
+            <nav>
+                <div class="navbar">
+                    <div class="navbar-links"><a href="#">Main</a></div>
+                    <div class="navbar-links"><a href="./events.html">Events</a></div>
+                    <div class="navbar-links"><a href="">Gallery</a></div>
+                    <div class="navbar-links"><a href="">Contact</a></div>
+                    <div class="navbar-links"><a href="">Shop</a></div>
+                </div>
+            </nav>
         </header>
-        <nav>
-            <div class="navbar">
-                <ul>
-                    <li><a href="index.html"><span>Main</span></a></li>
-                    <li><div class="nav-events">Events
-                        <div class="nav-events-dropdown">
-                            <a href="events.html">Spring</a>
-                            <a href="">Summer</a>
-                            <a href="">Autumn</a>
-                            <a href="">Winter</a>
-                        </div>
-                    </div></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">Contacts</a></li>
-                    <li><a href="">Shop</a></li>
-                </ul>
-            </div>
-        </nav>
 
         <main>
-            <div class="mainpage"> 
+            <div class="attantion">
+            <img class="hero" src="./img/main.jpg" alt="hero" width="1200" height="700">
+            <article>
+                <h2>Welcome to our bakery</h2>
+                <p>We prepared a lot of snack for you.</p>
+                <p>What you need is to decide, what will you take home.</p>
+            </article>
+            </div>
+            <div class="mainpage">
                 <p>Hello</p>
                 <dialog id="caps-lock">
                     <p>YOUR CAPS LOCK IS TURN ON</p>
@@ -71,23 +75,12 @@
         </main>
         <footer>
             <div class="footer">
-                <div class="socials">
-                    <a href="https://x.com/" alt="x.com" target="_blank">X</a><br>
-                    <a href="https://facebook.com/" alt="facebook.com">Facebook</a><br>
-                    <a href="https://google.com/" alt="google.com">Google</a><br>
-                    <a href="https://patreon.com/" alt="patreon">Patreon</a>
-                </div>
-                <div class="socials">
-                    <a href="https://www.youtube.com/" alt="youtube.com">Youtube</a><br>
-                    <a href="" alt=""></a><br>
-                    <a href="" alt=""></a><br>
-                    <a href="" alt=""></a><br>
-                </div>
+                <p>Copyright By MS</p>
             </div>
 
         </footer>
     </div>
-        <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
