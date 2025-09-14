@@ -65,37 +65,36 @@
                 <button id="autumn" class="event-button">Autumn</button>
                 <button id="winter" class="event-button">Winter</button>
                 <button id="add-event" class="event-button">+</button>
-                <dialog id="event-dialog" class="dialog-login">
-                    <form action="" method="dialog" class="login">
-                        <div class="login">
+                <dialog id="dialog-events" class="event-dialog-window">
+                    <form method="dialog" for="form-events">
+                        <div class="event-window">
+                            <button id="btn-close">X</button>
                             <label for="event-name">Event name</label>
-                            <input type="text" name="event-name" id="event-name" required/>
-
-                            <label for="event-season">Which season</label>
-                            <select id="event-season" name="event-season" >
-                                <option value="spring">Spring</option>
-                                <option value="summer">Summer</option>
-                                <option value="autumn">Autumn</option>
-                                <option value="winter">Winter</option>
-                            </select>
+                            <input type="text" name="event-name" id="event-name" required />
 
                             <label for="event-date">Event date</label>
-                            <input type="date" name="event-date" id="event-date" required/>
-                            <button id="event-dialog-close">Comfirm</button>
+                            <div class="event-date">
+                                <input type="text" id="event-date-DD" placeholder="DD" class="event-date-widow">
+                                <span>/</span>
+                                <input type="text" id="event-date-MM" placeholder="MM" class="event-date-widow">
+                                <br />
+                                <button id="event-dialog-close">Comfirm</button>
+                            </div>
                         </div>
                     </form>
                 </dialog>
             </div>
-            <div id="spring-event"></div>
-            <div id="summer-content"></div>
-            <div id="autumn-content"></div>
-            <div id="winter-content"></div>
+            <div class="season-container">
+                <div id="spring-event" class=" div-season div-srping-event"></div>
+                <div id="summer-event" class=" div-season div-summer-event"></div>
+                <div id="autumn-event" class=" div-season div-autumn-event"></div>
+                <div id="winter-event" class=" div-season div-winter-event"></div>
+            </div>
         </main>
         <footer>
             <div class="footer">
                 <p>Copyright By MS</p>
             </div>
-
         </footer>
     </div>
     <script src="main.js"></script>
