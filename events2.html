@@ -28,7 +28,7 @@
                     </a>
                     <button id="openLogin" type="button">Log in</button>
                     <dialog closedby="any" class="dialog-login">
-                        <form action="" method="get" class="login">
+                        <form method="get" class="login">
                             <div class="login">
                                 <h3>Log in to Midnight Snack</h3>
 
@@ -66,17 +66,17 @@
                 <button id="winter" class="event-button">Winter</button>
                 <button id="add-event" class="event-button">+</button>
                 <dialog id="dialog-events" class="event-dialog-window">
-                    <form method="dialog" for="form-events">
+                    <form method="dialog" id="form-events">
                         <div class="event-window">
                             <button id="btn-close">X</button>
                             <label for="event-name">Event name</label>
                             <input type="text" name="event-name" id="event-name" required />
 
-                            <label for="event-date">Event date</label>
+                            <label for="event-date-DD">Event date</label>
                             <div class="event-date">
-                                <input type="text" id="event-date-DD" placeholder="DD" class="event-date-widow">
+                                <input type="number" id="event-date-DD" placeholder="DD" class="event-date-widow" mi="1" max="31" pattern="[0-9]" required>
                                 <span>/</span>
-                                <input type="text" id="event-date-MM" placeholder="MM" class="event-date-widow">
+                                <input type="number" id="event-date-MM" placeholder="MM" class="event-date-widow" min="1" max="12" pattern="[0-9]" required>
                                 <br />
                                 <button id="event-dialog-close">Comfirm</button>
                             </div>
@@ -97,7 +97,7 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <script src="main01.js"></script>
 </body>
 
 </html>

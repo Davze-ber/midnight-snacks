@@ -29,7 +29,6 @@
 const openDialogEvents = document.getElementById('add-event');
 const dialogEvents = document.getElementById('dialog-events');
 const closeDialogEvents = document.getElementById('btn-close');
-const formEvents = document.getElementById('form-events');
 
 openDialogEvents.addEventListener('click', () => {
   dialogEvents.showModal();
@@ -38,29 +37,10 @@ openDialogEvents.addEventListener('click', () => {
 closeDialogEvents.addEventListener('click', () => {
   dialogEvents.close();
 });
+const year = new Date();
+console.log(year);
 
 
-formEvents.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const eventName = document.getElementById('event-name').value;
-  const eventDateDD = document.getElementById('event-date-DD').value;
-  const eventDateMM = document.getElementById('event-date-MM').value;
-  let eventSeason = "";
-
-  if (["3", "4", "5"].includes(eventDateMM)) {
-    eventSeason = "spring";
-  } else if (["6", "7", "8"].includes(eventDateMM)) {
-    eventSeason = "summer";
-  } else if (["9", "10", "11"].includes(eventDateMM)) {
-    eventSeason = "autumn";
-  } else if (["12", "1", "2"].includes(eventDateMM)) {
-    eventSeason = "winter";
-  }
-  console.log(`Event Name: ${eventName}, Date: ${eventDateDD}/${eventDateMM} ${eventSeason}`);
-  dialogEvents.close()
-  createSeasonalEvent(eventName, eventDateDD, eventDateMM, eventSeason);
-});
 //Buttons to switch Season's Div
 const springBtn = document.getElementById('spring');
 const summerBtn = document.getElementById('summer');
@@ -72,6 +52,7 @@ const seasonSummer = document.getElementById('summer-event');
 const seasonAutumn = document.getElementById('autumn-event');
 const seasonWinter = document.getElementById('winter-event');
 
+//Switching season's tabs
 springBtn.addEventListener('click', () => {
   seasonSpring.style.zIndex = "4";
   seasonSummer.style.zIndex = "3";
@@ -97,83 +78,106 @@ winterBtn.addEventListener('click', () => {
   seasonWinter.style.zIndex = "4";
 });
 
-function createSeasonalEvent(eventName, eventDateDD, eventDateMM, eventSeason) {
+const formEvents = document.getElementById('form-events');
+formEvents.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-  const EventDate = `${eventDateDD.value}/${eventDateMM.value}`;
+  const eventName = document.getElementById('event-name').value.trim();
+  const eventDateDD = Number(document.getElementById('event-date-DD').value);
+  const eventDateMM = Number(document.getElementById('event-date-MM').value);
+  let eventSeason = "";
 
-  const seasonalEventDiv = document.createElement('div');
-  const seasonalEventName = document.createElement('h3');
-  seasonalEventName.textContent = eventName;
-  const seasonalEventDate = document.createElement('p');
-  seasonalEventDate.textContent = EventDate;
-  seasonalEventDiv.appendChild(seasonalEventName);
-  seasonalEventDiv.appendChild(seasonalEventDate);
-
-  if (eventSeason.value === "spring") {
-    seasonSpring.appendChild(seasonalEventDiv);
-  } else if (eventSeason.value === "summer") {
-    seasonSpring.appendChild(seasonalEventDiv);
-  } else if (eventSeason.value === "autumn") {
-    seasonSpring.appendChild(seasonalEventDiv);
-  } else {
-    seasonWinter.appendChild(seasonalEventDiv);
+  switch (eventDateMM) {
+    case 3:
+    case 4:
+    case 5:
+      eventSeason = "spring";
+      break;
+    case 6:
+    case 7:
+    case 8:
+      eventSeason = "summer";
+      break;
+    case 9:
+    case 10:
+    case 11:
+      eventSeason = "autumn";
+      break;
+    case 12:
+    case 1:
+    case 2:
+      eventSeason = "winter";
+      break;
   }
+
+  const eventDay = {
+    eName: eventName,
+    eDay: eventDateDD,
+    eMonth: eventDateMM,
+    eSeason: eventSeason
+  }
+  console.log(eventDay);
+
+  console.log(`Event Name: ${eventName}, Date: ${eventDateDD}/${eventDateMM}, Season: ${eventDay.eSeason}`);
+
+  const saveEDay = JSON.stringify(eventDay);
+  localStorage.setItem("seasonalevents", saveEDay);
+
+  document.getElementById('event-name').value = "";
+  document.getElementById('event-date-DD').value = "";
+  document.getElementById('event-date-MM').value = "";
+
+  dialogEvents.close();
+  createEventDiv(eventDay);
+});
+
+function saveEvents() {
+
 }
-// class SeasonalEvent {
-//   constructor(eventName,eventDateDD,eventDateMM,eventSeason) {
-//     this.eventName = eventName;
-//     this.eventDateDD = eventDateDD;
-//     this.eventDateMM = eventDateMM;
-//     this.eventSeason = eventSeason;
-//   }
-//   get e
 
-//   report() {
-//       console.log(`Event Name: ${eventName}, Date: ${eventDate} ${eventSeason}`);
-//   };
-// }
 
-// //     const newEvent = document.createElement('div');
-// //     newEvent.classList.add(`${eventSeason}-season`);
+//Creating Event Div
+function createEventDiv(eventDay) {
 
-// //     const newEventHeading = document.createElement('h3')
-// //     newEventHeading.textContent = eventName;
+  const eventDate = `${eventDay.eDay}/${eventDay.eMonth}`;
+  const removeEventDiv = document.createElement('button')
+  const eventDiv = document.createElement('div');
+  const eventNameDiv = document.createElement('h3');
+  const eventDateDiv = document.createElement('p');
 
-// //     const newEventDate = document.createElement('p');
-// //     newEventDate.textContent = eventDate;
 
-// //     newEvent.appendChild(newEventHeading);
-// //     newEvent.appendChild(newEventDate);
+  //Adding text to a Div
+  eventNameDiv.textContent = eventDay.eName;
+  eventDateDiv.textContent = eventDate;
+  //Removing a Div
 
-// //     springEvent.append(newEvent);
-// //     eventDialog.close();
-// // }
+  removeEventDiv.textContent = 'x';
+  removeEventDiv.classList.add('remove-event-btn');
 
-// /* 
-//     by pressing the button to open event dialog, then close the dialog or use x button to close it
+  //Adding a Name, a Date nd Removal of a Div
+  eventDiv.append(removeEventDiv, eventNameDiv, eventDateDiv);
 
-// */
-// function addSeasonEvent(eventName, eventDateDD, eventDateMM) {
-//     this.eventname = eventName;
-//     this.eventDateDD = eventDateDD;
-//     this.eventDateMM = eventDateMM;
+  switch (eventDay.eSeason) {
+    case "spring":
+      seasonSpring.appendChild(eventDiv);
+      break;
+    case "summer":
+      seasonSummer.appendChild(eventDiv);
+      break;
+    case "autumn":
+      seasonAutumn.appendChild(eventDiv);
+      break;
+    case "winter":
+      seasonWinter.appendChild(eventDiv);
+      break;
+  }
 
-//       // Determine season based on month
-//     if (eventDateMM >= 3 && eventDateMM <= 5) {
-//         this.eventSeason = "Spring";
-//     } else if (eventDateMM >= 6 && eventDateMM <= 8) {
-//         this.eventSeason = "Summer";
-//     } else if (eventDateMM >= 9 && eventDateMM <= 11) {
-//         this.eventSeason = "Autumn";
-//     } else {
-//         this.eventSeason = "Winter";
-//     }
+  removeEventDiv.addEventListener('click', () => {
+    seasonalEventDiv.remove();
+  });
 
-// }
 
-// // let name = prompt("Enter event name:");
-// // let day = parseInt(prompt("Enter day (DD):"));
-// // let month = parseInt(prompt("Enter month (MM):"));
+}
 
-// // let userEvent = new addSeasonEvent(eventName, eventDateDD, eventDateMM);
-// // console.log(userEvent);
+
+

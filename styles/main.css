@@ -284,6 +284,7 @@ article p {
     background-color: white;
     position: absolute;
     z-index: 1;
+    color: black;
 }
 
 /* -------------Modal----------*/
