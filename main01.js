@@ -88,13 +88,14 @@ function eventDiv() {
         const eventDateDiv = document.createElement('p');
         const removeEventDiv = document.createElement('button')
 
-
+        eventDiv.classList.add('div-event');
         //Adding text to a Div
         eventNameDiv.textContent = event.eName;
         eventDateDiv.textContent = `${event.eDay} / ${event.eMonth}`;
         removeEventDiv.textContent = 'x';
         removeEventDiv.classList.add('remove-event-btn');
-
+        removeEventDiv.classList.add('div-removeBtn');
+        
         //Adding a Name, a Date nd Removal of a Div
         eventDiv.append(removeEventDiv, eventNameDiv, eventDateDiv);
 
