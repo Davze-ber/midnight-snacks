@@ -61,6 +61,19 @@ header {
     height: 8rem;
 }
 
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox
+input[type=number] {
+    -moz-app: textfield;
+} */
+
+
 .header {
     background-color: var(--HEADERFOOTERCOLOR);
     display: flex;

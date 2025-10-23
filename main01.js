@@ -1,4 +1,7 @@
 
+
+
+
 const openDialogEvents = document.getElementById('add-event');
 const dialogEvents = document.getElementById('dialog-events');
 const closeDialogEvents = document.getElementById('btn-close');
@@ -52,7 +55,7 @@ winterBtn.addEventListener('click', () => {
     seasonWinter.style.zIndex = "4";
 });
 
-function saveEvents() {
+function saveEvents(eventDay) {
 
     const storedEvents = JSON.parse(localStorage.getItem("savedEvents")) || [];
 
@@ -179,6 +182,8 @@ formEvents.addEventListener('submit', (event) => {
     saveEvents(eventDay);
 
 });;
+
+
 document.addEventListener("DOMContentLoaded", () => {
     eventDiv();
 });
