@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="img/cake-png-26272.png">
+    <title>Midnight Snack</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <div id="header-start" class="header-bar">
+                    <div class="header-img"><img src="img/cake-png-26272.png" alt="header cake">
+                    </div>
+                </div>
+                <div id="header-middle" class="header-bar">
+                    <h1 class="header-title">Midnight Snack</h1>
+                </div>
+                <div id="header-end" class="header-bar">
+                    <a href="" id="shop-page" target="_self">
+                        <div class="shop-icon">
+                            <div class="shop-cart-amount">1</div>
+                        </div>
+                    </a>
+                    <button id="openLogin" type="button">Log in</button>
+                    <dialog closedby="any" class="dialog-login">
+                        <form method="get" class="login">
+                            <div class="login">
+                                <h3>Log in to Midnight Snack</h3>
+
+                                <label for="login-username">Userlogin-username</label>
+                                <input type="text" name="login-username" id="login-username" />
+
+                                <label for="login-password">Password</label>
+                                <input type="password" name="login-password" id="login-password" />
+                                <a href="">Trouble logging in?</a>
+                                <button type="submit">Log in</button>
+
+                                <a href="">Don't have an account? Sign up</a>
+                            </div>
+                        </form>
+
+                    </dialog>
+                </div>
+            </div>
+            <nav>
+                <div class="navbar">
+                    <div class="navbar-links"><a href="./index.html">Main</a></div>
+                    <div class="navbar-links"><a href="./events2.html">Events</a></div>
+                    <div class="navbar-links"><a href="">Gallery</a></div>
+                    <div class="navbar-links"><a href="">Contact</a></div>
+                    <div class="navbar-links"><a href="">Shop</a></div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="events-nav">
+                <button id="spring" class="event-button">Spring</button>
+                <button id="summer" class="event-button">Summer</button>
+                <button id="autumn" class="event-button">Autumn</button>
+                <button id="winter" class="event-button">Winter</button>
+                <button id="add-event" class="event-button">+</button>
+                <dialog id="dialog-events" class="event-dialog-window">
+                    <form method="dialog" id="form-events">
+                        <div class="event-window">
+                            <button id="btn-close">X</button>
+                            <label for="event-name">Event name</label>
+                            <input type="text" name="event-name" id="event-name" required />
+
+                            <label for="event-date-DD">Event date</label>
+                            <div class="event-date">
+                                <input type="number" id="event-date-DD" placeholder="DD" class="event-date-widow" mi="1" max="31" pattern="[0-9]" required>
+                                <span>/</span>
+                                <input type="number" id="event-date-MM" placeholder="MM" class="event-date-widow" min="1" max="12" pattern="[0-9]" required>
+                                <br />
+                                <button id="event-dialog-close">Comfirm</button>
+                            </div>
+                        </div>
+                    </form>
+                </dialog>
+            </div>
+            <div class="season-container">
+                <div id="spring-event" class=" div-season div-srping-event"></div>
+                <div id="summer-event" class=" div-season div-summer-event"></div>
+                <div id="autumn-event" class=" div-season div-autumn-event"></div>
+                <div id="winter-event" class=" div-season div-winter-event"></div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <p>Copyright By MS</p>
+            </div>
+        </footer>
+    </div>
+    <script src="main01.js"></script>
+</body>
+
+</html>
